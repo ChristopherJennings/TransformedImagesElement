@@ -79,18 +79,21 @@ const renderElementComponent = (elementProps: IElementProps) => {
     );
 }
 
-export function initElementFromDelivery(element: ICustomElement, context: IContext): void {
+export function initElement(element: ICustomElement, context: IContext): void {
     try {
         if (element.config === null) {
             throw Error("The configuration is missing!");
         }
 
+        // try using https://github.com/request/request#readme
+
         const client = new ContentManagementClient({
             projectId: context.projectId,
-            apiKey: element.config.contentManagementAPIKey
+            apiKey: "a", //element.config.contentManagementAPIKey,
         });
 
         client.listAssets()
+            .withUrl("https://7ttn8q5ceb.execute-api.us-east-2.amazonaws.com/default/RequestRepeater")//element.config.contentManagementEndpoint
             .toObservable()
             .subscribe(
                 response => parseResponse(element, context, response.data.items, response.data.pagination.continuationToken, client),
