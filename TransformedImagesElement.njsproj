@@ -70,6 +70,7 @@
     <TypeScriptCompile Include="src\types\editor\cropActions\ZoomActions.ts" />
     <TypeScriptCompile Include="src\types\editor\resizeActions\ScaleActions.ts" />
     <TypeScriptCompile Include="src\types\editor\resizeActions\FitActions.ts" />
+    <TypeScriptCompile Include="src\types\IListAssetsService.ts" />
     <TypeScriptCompile Include="src\types\NumberUtils.ts" />
     <TypeScriptCompile Include="src\types\react-html-id.d.ts" />
     <TypeScriptCompile Include="src\types\transformedImage\Color.ts" />

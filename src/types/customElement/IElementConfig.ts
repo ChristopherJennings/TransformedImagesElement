@@ -8,7 +8,7 @@ export interface IOptionalConfig {
     colorPickerDefaultColors: string[]
 }
 export interface IRequiredConfig {
-    contentManagementAPIKey: string;
+    contentManagementEndpoint: string;
 }
 
 export interface IElementConfig extends IOptionalConfig, IRequiredConfig {
